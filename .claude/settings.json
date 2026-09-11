@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:binnacrest.com)",
+      "Read(//c/Users/samee/Desktop/**)",
+      "Bash(netstat -ano)",
+      "Bash(cd \"c:\\\\Users\\\\samee\\\\Desktop\\\\Gewinode Raven\" && ls && ls src src/components src/sections src/pages src/data src/hooks 2>/dev/null && cat package.json)",
+      "Read(//c/Users/samee/Desktop/Gewinode Raven/**)",
+      "Read(//c/Users/samee/Desktop/Gewinode Raven/src/components/**)",
+      "Read(//c/Users/samee/Desktop/Gewinode Raven/src/hooks/**)",
+      "Read(//c/Users/samee/Desktop/Gewinode Raven/src/**)",
+      "Bash(mkdir -p src/components src/hooks src/data src/sections src/pages src/styles public scripts)",
+      "Bash(cp \"../Gewinode Raven/src/components/Header.jsx\" \"../Gewinode Raven/src/components/Footer.jsx\" \"../Gewinode Raven/src/components/Icon.jsx\" \"../Gewinode Raven/src/components/Reveal.jsx\" \"../Gewinode Raven/src/components/FaqList.jsx\" \"../Gewinode Raven/src/components/LegalPage.jsx\" \"../Gewinode Raven/src/components/SectionHead.jsx\" \"../Gewinode Raven/src/components/RegistrationForm.jsx\" src/components/)",
+      "Bash(cp \"../Gewinode Raven/src/hooks/useMeta.js\" src/hooks/)",
+      "Bash(cp \"../Gewinode Raven/src/main.jsx\" src/)",
+      "Bash(cp \"../Gewinode Raven/vercel.json\" .)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node scripts/verify.mjs)",
+      "Bash(node scripts/rasterize-og.mjs)",
+      "Read(//c/Users/samee/Desktop/Gewinode Raven/src/styles/**)",
+      "Bash(node -p \"require\\('intl-tel-input/package.json'\\).version\")",
+      "Bash(sed -i \"s/iti__selected-flag/iti__country-selector/g\" scripts/inspect-dropdown.mjs)",
+      "Bash(node scripts/inspect-dropdown.mjs)",
+      "Bash(node scripts/audit-testimonials.mjs)",
+      "Bash(node -e \"const s=\\\\\"Binnacrest AI is Australia's automated AI trading platform with 85% win-rate accuracy, 98% cold storage and up to \\\\$850 in daily returns from \\\\$250.\\\\\"; console.log\\('current len check:', s.length\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(node scripts/journey.mjs)",
+      "Bash(rm scripts/find-error.mjs)",
+      "Bash(node scripts/audit-header.mjs)",
+      "Bash(node scripts/find-overflow.mjs)",
+      "Bash(node scripts/check-gaps.mjs)",
+      "Bash(node scripts/check-signup.mjs)",
+      "Bash(rm scripts/check-signup.mjs)",
+      "Bash(sed -i \"s|http://localhost:5187|http://localhost:4173|\" scripts/lh.mjs)",
+      "Bash(node scripts/lh.mjs)",
+      "Bash(awk '{print $5}')",
+      "Bash(xargs -r -n1 taskkill //F //PID)"
+    ]
+  }
+}

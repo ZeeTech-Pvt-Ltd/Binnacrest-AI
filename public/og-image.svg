@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0a0e1a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5d67c"/>
+      <stop offset="0.5" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#b28a1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0e1a"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="52" y="52" width="1096" height="526" fill="none" stroke="#d4af37" stroke-opacity="0.35" stroke-width="1.5"/>
+  <rect x="80" y="92" width="140" height="140" rx="32" fill="#10152a" stroke="#3a3320" stroke-width="3"/>
+  <path d="M129 118v76M129 118h51a34 34 0 010 68h-51M129 152h58a34 34 0 010 68h-59" fill="none" stroke="url(#gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="252" y="150" font-family="Georgia, serif" font-size="36" fill="#9aa0b5" letter-spacing="6">AUTOMATED AI TRADING FOR AUSTRALIA</text>
+  <text x="80" y="330" font-family="Georgia, serif" font-weight="600" font-size="96" fill="url(#gold)">Binnacrest AI</text>
+  <text x="80" y="396" font-family="Georgia, serif" font-style="italic" font-size="40" fill="#f5f2e8">Earn up to $850 daily - starting from just $250</text>
+  <text x="80" y="500" font-family="monospace" font-size="26" fill="#9aa0b5">85% trading accuracy   ·   98% cold storage   ·   28,000+ Australian members</text>
+  <text x="80" y="560" font-family="monospace" font-size="24" fill="#d4af37">binnacrest-ai.com</text>
+</svg>

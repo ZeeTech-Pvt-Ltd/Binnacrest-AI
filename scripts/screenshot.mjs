@@ -1,0 +1,15 @@
+import { chromium } from 'file:///C:/Users/samee/node_modules/playwright/index.mjs';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+await page.goto('http://localhost:5187/', { waitUntil: 'networkidle' });
+await page.waitForTimeout(1200);
+await page.screenshot({ path: 'shots/home-desktop.png' });
+await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+await page.waitForTimeout(600);
+await page.screenshot({ path: 'shots/home-footer.png' });
+await page.setViewportSize({ width: 390, height: 844 });
+await page.goto('http://localhost:5187/', { waitUntil: 'networkidle' });
+await page.waitForTimeout(1200);
+await page.screenshot({ path: 'shots/home-mobile.png' });
+await browser.close();
+console.log('shots written');
