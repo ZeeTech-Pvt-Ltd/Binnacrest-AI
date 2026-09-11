@@ -41,7 +41,13 @@ const svc = await page.evaluate(() => {
   }
   return null;
 });
-check('home Service+Product JSON-LD with AggregateRating', svc?.aggregateRating?.ratingValue === 4.8 && svc?.aggregateRating?.reviewCount === 3100 && Array.isArray(svc?.['@type']));
+check(
+  'home Service+Product JSON-LD with AggregateRating',
+  svc?.aggregateRating?.ratingValue === 4.8 &&
+    svc?.aggregateRating?.reviewCount === 3100 &&
+    Array.isArray(svc?.['@type'])
+);
+check('product schema has image + brand', svc?.image?.includes('og-image.png') && svc?.brand?.['@type'] === 'Brand');
   const BW = /delve|unleash|elevate|transformative|cutting-edge|game-changer|seamless|in the realm of|mastering/i;
   check('home no AI buzzwords', !BW.test(t), '');
   const you = (t.match(/\byou\b|\byour\b|\byourself\b/gi) || []).length;
