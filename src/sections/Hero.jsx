@@ -1,21 +1,16 @@
-import Reveal from '../components/Reveal.jsx';
 import Icon from '../components/Icon.jsx';
 import Rich from '../components/Rich.jsx';
 import RegistrationForm from '../components/RegistrationForm.jsx';
 import { HERO } from '../data/content.js';
 
-const initials = (name) =>
-  name
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2);
-
+// No Reveal wrapper here on purpose: the static shell in index.html shows the
+// hero instantly, and the mounted version must appear the same way (no fade)
+// so the swap is seamless.
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero__grid">
-        <Reveal>
+        <div>
           <span className="hero__scarcity">{HERO.scarcity}</span>
           <h1>
             {HERO.titleLead} <span className="serif-italic gold-text">{HERO.titleAmount}</span>{' '}
@@ -67,19 +62,17 @@ export default function Hero() {
               </span>
             ))}
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal delay={120}>
+        <div>
           <RegistrationForm
             idPrefix="hero"
             title="Create Your Account"
             subtitle="Registration Is Limited To Verified Residents Of Australia."
             buttonLabel="Register Now"
           />
-        </Reveal>
+        </div>
       </div>
     </section>
   );
 }
-
-export { initials };

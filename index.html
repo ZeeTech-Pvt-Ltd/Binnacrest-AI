@@ -84,6 +84,96 @@
     </script>
   </head>
   <body>
+    <!-- Static shell: paints the hero instantly (fast FCP/LCP) and is removed
+         the moment React mounts. Keep in sync with src/sections/Hero.jsx and
+         src/data/content.js (HERO). -->
+    <div id="static-shell">
+      <header class="header">
+        <div class="container header__inner">
+          <a class="logo" href="/">
+            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <defs>
+                <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f5d67c" />
+                  <stop offset="0.55" stop-color="#d4af37" />
+                  <stop offset="1" stop-color="#b28a1f" />
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="9" fill="#10152a" stroke="#3a3320" />
+              <path
+                d="M12.5 8.5v15M12.5 8.5h5.6a4 4 0 010 8h-5.6M12.5 16.5h6.4a4 4 0 010 8h-6.7"
+                fill="none"
+                stroke="url(#sg)"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="logo__text">Binnacrest AI</span>
+          </a>
+          <div class="header__actions" style="margin-left: auto">
+            <a class="btn btn--gold btn--sm" href="/sign-up">Sign Up</a>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="container hero__grid">
+            <div>
+              <span class="hero__scarcity">Only 38 registrations left this week</span>
+              <h1>
+                Earn Up To <span class="serif-italic gold-text">$850</span> Daily With
+                <span class="gold-text">Binnacrest AI</span>
+              </h1>
+              <p class="hero__sub">
+                You don’t lift a finger. Our AI engine trades the world’s biggest exchanges
+                around the clock, so your money works while you live your life. Join
+                28,000+ Australians and start with just <strong>$250</strong>.
+              </p>
+              <div class="hero__coins">
+                <span class="coin-chip">
+                  <span class="coin-chip__icon">BTC</span>
+                  <span class="coin-chip__meta">
+                    <span class="coin-chip__symbol">Bitcoin</span><br />
+                    <span class="coin-chip__price">$116,540.20 <span class="coin-chip__change">+1.9%</span></span>
+                  </span>
+                </span>
+                <span class="coin-chip">
+                  <span class="coin-chip__icon">ETH</span>
+                  <span class="coin-chip__meta">
+                    <span class="coin-chip__symbol">Ethereum</span><br />
+                    <span class="coin-chip__price">$4,415.90 <span class="coin-chip__change">+2.6%</span></span>
+                  </span>
+                </span>
+                <span class="coin-chip">
+                  <span class="coin-chip__icon">LTC</span>
+                  <span class="coin-chip__meta">
+                    <span class="coin-chip__symbol">Litecoin</span><br />
+                    <span class="coin-chip__price">$119.14 <span class="coin-chip__change">+1.2%</span></span>
+                  </span>
+                </span>
+              </div>
+              <div class="hero__rating">
+                <div class="avatar-cluster">
+                  <span>MR</span><span>CW</span><span>BS</span><span>EL</span><span>JM</span>
+                </div>
+                <div>
+                  <div class="hero__rating-stars" aria-hidden="true">★★★★★</div>
+                  <p class="hero__rating-text">
+                    <strong>4.8/5</strong> from 3,100+ verified Australian reviews
+                  </p>
+                </div>
+              </div>
+              <div class="hero__trust">
+                <span>✓ No hidden fees</span>
+                <span>✓ Withdraw anytime</span>
+                <span>✓ 2FA secured</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
