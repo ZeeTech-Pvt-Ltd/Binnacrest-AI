@@ -35,7 +35,13 @@
       "Bash(sed -i \"s|http://localhost:5187|http://localhost:4173|\" scripts/lh.mjs)",
       "Bash(node scripts/lh.mjs)",
       "Bash(awk '{print $5}')",
-      "Bash(xargs -r -n1 taskkill //F //PID)"
+      "Bash(xargs -r -n1 taskkill //F //PID)",
+      "Bash(git check-ignore *)",
+      "Bash(git rm *)",
+      "Bash(node scripts/profile-longtasks.mjs)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\samee\\.claude\\projects\\c--Users-samee\\memory"
     ]
   }
 }

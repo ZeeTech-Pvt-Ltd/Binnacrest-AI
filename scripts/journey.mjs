@@ -89,6 +89,7 @@ await q.click();
 check('FAQ closes', !(await page.locator('.faq__item').nth(2).getAttribute('class')).includes('is-open'));
 
 // ---------- 4. Phone dropdown journey ----------
+await page.locator('.form-wrap .iti__selected-country').first().waitFor({ timeout: 5000 });
 await page.locator('.form-wrap .iti__selected-country').first().scrollIntoViewIfNeeded();
 await page.locator('.form-wrap .iti__selected-country').first().click();
 await page.waitForTimeout(400);
