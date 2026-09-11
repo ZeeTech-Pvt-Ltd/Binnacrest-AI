@@ -32,26 +32,20 @@ export default function RegistrationForm({
     const input = phoneRef.current;
     if (!input || itiRef.current) return;
 
+    // Registration is AU-only, so the default country is fixed. This also keeps
+    // the geo-lookup request out of the page-load critical path (PSI flagged it
+    // as a 1.1s chain tail) and shows the +61 dial code from the first frame.
     const iti = intlTelInput(input, {
-      initialCountry: '',
-      // ipapi.co is Cloudflare-blocked on localhost, so ipwho.is leads the chain.
-      initialCountryLookup: async () => {
-        try {
-          const res = await fetch('https://ipwho.is/');
-          const data = await res.json();
-          return data.country_code || 'au';
-        } catch {
-          try {
-            const res = await fetch('https://ipapi.co/json/');
-            const data = await res.json();
-            return data.country_code || 'au';
-          } catch {
-            return 'au';
-          }
-        }
-      },
+      initialCountry: 'au',
     });
     itiRef.current = iti;
+
+    // With a fixed initialCountry the countrychange event fires during the
+    // constructor, before our listener below attaches - sync the label now.
+    const initialCountry = iti.getSelectedCountry();
+    if (initialCountry) {
+      setPhoneCountry({ name: initialCountry.name, dialCode: initialCountry.dialCode });
+    }
 
     // Warm up the validators on first focus or after 4s idle - whichever comes first.
     const warm = () => {
