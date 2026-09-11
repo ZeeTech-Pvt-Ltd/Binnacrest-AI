@@ -66,7 +66,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
+        "@type": ["Service", "Product"],
         "serviceType": "AI Trading Platform",
         "name": "Binnacrest AI",
         "url": "https://binnacrest-ai.com/",
@@ -76,9 +76,15 @@
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "bestRating": "5",
-          "reviewCount": "3100"
+          "ratingValue": 4.8,
+          "bestRating": 5,
+          "reviewCount": 3100
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "250",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock"
         }
       }
     </script>

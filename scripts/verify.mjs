@@ -35,12 +35,13 @@ const svc = await page.evaluate(() => {
   for (const s of scripts) {
     try {
       const j = JSON.parse(s.textContent);
-      if (j['@type'] === 'Service') return j;
+      const types = Array.isArray(j['@type']) ? j['@type'] : [j['@type']];
+      if (types.includes('Service')) return j;
     } catch {}
   }
   return null;
 });
-check('home Service JSON-LD with AggregateRating', svc?.aggregateRating?.ratingValue === '4.8' && svc?.aggregateRating?.reviewCount === '3100');
+check('home Service+Product JSON-LD with AggregateRating', svc?.aggregateRating?.ratingValue === 4.8 && svc?.aggregateRating?.reviewCount === 3100 && Array.isArray(svc?.['@type']));
   const BW = /delve|unleash|elevate|transformative|cutting-edge|game-changer|seamless|in the realm of|mastering/i;
   check('home no AI buzzwords', !BW.test(t), '');
   const you = (t.match(/\byou\b|\byour\b|\byourself\b/gi) || []).length;

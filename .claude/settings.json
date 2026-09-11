@@ -43,7 +43,9 @@
       "Bash(curl -s \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fbinnacrest-ai.com%2F&strategy=mobile\" -o psi.json)",
       "Read(//c/Users/samee/.claude/projects/c--Users-samee/memory/**)",
       "Bash(grep -n \"perf pass\\\\|Preact\\\\|Vercel still serves\\\\|revert\" \"C:\\\\Users\\\\samee\\\\.claude\\\\projects\\\\c--Users-samee\\\\memory\\\\binnacrest-ai-project.md\" | head -10)",
-      "Bash(curl -s http://localhost:5187/)"
+      "Bash(curl -s http://localhost:5187/)",
+      "Bash(curl -s https://binnacrest-ai.com/)",
+      "WebSearch"
     ],
     "additionalDirectories": [
       "C:\\Users\\samee\\.claude\\projects\\c--Users-samee\\memory"
