@@ -38,7 +38,9 @@
       "Bash(xargs -r -n1 taskkill //F //PID)",
       "Bash(git check-ignore *)",
       "Bash(git rm *)",
-      "Bash(node scripts/profile-longtasks.mjs)"
+      "Bash(node scripts/profile-longtasks.mjs)",
+      "Bash(curl -s \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fbinnacrest-ai.com%2F&strategy=mobile\" -o /tmp/psi.json)",
+      "Bash(curl -s \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fbinnacrest-ai.com%2F&strategy=mobile\" -o psi.json)"
     ],
     "additionalDirectories": [
       "C:\\Users\\samee\\.claude\\projects\\c--Users-samee\\memory"
