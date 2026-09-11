@@ -14,10 +14,8 @@ export default function RegistrationForm({
   subtitle = 'Registration Is Limited To Verified Residents Of Australia.',
   buttonLabel = 'Register Now',
   showConsent = true,
-  initOnVisible = false,
 }) {
   const navigate = useNavigate();
-  const formRef = useRef(null);
   const phoneRef = useRef(null);
   const itiRef = useRef(null);
   const utilsDeferred = useRef(null);
@@ -34,97 +32,58 @@ export default function RegistrationForm({
     const input = phoneRef.current;
     if (!input || itiRef.current) return;
 
-    // Building the 244-country dropdown is heavy main-thread work (~190ms task).
-    // It must never block first paint: below-fold forms wait until they scroll
-    // near the viewport, and everything else waits for idle time.
-    let disposed = false;
-    let initHandle;
-    let onFocus;
-    let onCountryChange;
-
-    const init = () => {
-      if (disposed) return;
-      const iti = intlTelInput(input, {
-        initialCountry: '',
-        // Registration is AU-only, so the dropdown holds the five relevant
-        // markets instead of 244 countries (cuts ~100ms of list building).
-        onlyCountries: ['au', 'gb', 'nz', 'us', 'ca'],
-        // ipapi.co is Cloudflare-blocked on localhost, so ipwho.is leads the chain.
-        initialCountryLookup: async () => {
+    const iti = intlTelInput(input, {
+      initialCountry: '',
+      // ipapi.co is Cloudflare-blocked on localhost, so ipwho.is leads the chain.
+      initialCountryLookup: async () => {
+        try {
+          const res = await fetch('https://ipwho.is/');
+          const data = await res.json();
+          return data.country_code || 'au';
+        } catch {
           try {
-            const res = await fetch('https://ipwho.is/');
+            const res = await fetch('https://ipapi.co/json/');
             const data = await res.json();
             return data.country_code || 'au';
           } catch {
-            try {
-              const res = await fetch('https://ipapi.co/json/');
-              const data = await res.json();
-              return data.country_code || 'au';
-            } catch {
-              return 'au';
-            }
+            return 'au';
           }
-        },
+        }
+      },
+    });
+    itiRef.current = iti;
+
+    // Warm up the validators on first focus or after 4s idle - whichever comes first.
+    const warm = () => {
+      if (utilsDeferred.current) return;
+      let resolveDeferred;
+      utilsDeferred.current = new Promise((r) => {
+        resolveDeferred = r;
       });
-      itiRef.current = iti;
-
-      // Warm up the validators on first focus - whichever comes first.
-      const warm = () => {
-        if (utilsDeferred.current) return;
-        let resolveDeferred;
-        utilsDeferred.current = new Promise((r) => {
-          resolveDeferred = r;
-        });
-        intlTelInput
-          .attachUtils(() => import('intl-tel-input/utils'))
-          .then(resolveDeferred)
-          .catch(() => resolveDeferred());
-      };
-      onFocus = () => {
-        warm();
-        input.removeEventListener('focus', onFocus);
-      };
-      input.addEventListener('focus', onFocus);
-
-      // Keep the phone label in sync with the selected country (flag + dial code).
-      onCountryChange = (e) => {
-        const c = e.detail;
-        setPhoneCountry(c ? { name: c.name, dialCode: c.dialCode } : null);
-      };
-      input.addEventListener('countrychange', onCountryChange);
+      intlTelInput
+        .attachUtils(() => import('intl-tel-input/utils'))
+        .then(resolveDeferred)
+        .catch(() => resolveDeferred());
     };
+    const onFocus = () => {
+      warm();
+      input.removeEventListener('focus', onFocus);
+    };
+    input.addEventListener('focus', onFocus);
+    // Note: no idle warm-up - loading utils on idle cost ~3s of main-thread blocking
+    // (TBT) on mobile. Validators now load on first focus; submit waits ≤3s if needed.
 
-    if (initOnVisible && formRef.current) {
-      const io = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            io.disconnect();
-            init();
-          }
-        },
-        { rootMargin: '800px' }
-      );
-      io.observe(formRef.current);
-      initHandle = io;
-    } else if ('requestIdleCallback' in window) {
-      initHandle = window.requestIdleCallback(init, { timeout: 900 });
-    } else {
-      initHandle = setTimeout(init, 0);
-    }
+    // Keep the phone label in sync with the selected country (flag + dial code).
+    const onCountryChange = (e) => {
+      const c = e.detail;
+      setPhoneCountry(c ? { name: c.name, dialCode: c.dialCode } : null);
+    };
+    input.addEventListener('countrychange', onCountryChange);
 
     return () => {
-      disposed = true;
-      if (initHandle) {
-        if (initHandle instanceof IntersectionObserver) initHandle.disconnect();
-        else if ('cancelIdleCallback' in window && typeof initHandle === 'number') {
-          window.cancelIdleCallback(initHandle);
-        } else {
-          clearTimeout(initHandle);
-        }
-      }
-      if (onFocus) input.removeEventListener('focus', onFocus);
-      if (onCountryChange) input.removeEventListener('countrychange', onCountryChange);
-      itiRef.current?.destroy();
+      input.removeEventListener('focus', onFocus);
+      input.removeEventListener('countrychange', onCountryChange);
+      iti.destroy();
       itiRef.current = null;
       utilsDeferred.current = null;
     };
@@ -217,7 +176,7 @@ export default function RegistrationForm({
   };
 
   return (
-    <form className="form form-wrap" ref={formRef} onSubmit={handleSubmit} noValidate>
+    <form className="form form-wrap" onSubmit={handleSubmit} noValidate>
       <h2 className="form__title">{title}</h2>
       <p className="form__sub">{subtitle}</p>
 

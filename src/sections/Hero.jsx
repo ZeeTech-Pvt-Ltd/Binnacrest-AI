@@ -4,6 +4,13 @@ import Rich from '../components/Rich.jsx';
 import RegistrationForm from '../components/RegistrationForm.jsx';
 import { HERO } from '../data/content.js';
 
+const initials = (name) =>
+  name
+    .split(' ')
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2);
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -74,3 +81,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export { initials };

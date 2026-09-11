@@ -74,12 +74,9 @@ check(
 check('honeypot present', (await page.locator('.form__honey').count()) >= 1);
 check('consent checkbox present', (await page.locator('.form__consent input').count()) >= 1);
 check('submit is gold button', await page.locator('.form-wrap .btn--gold').first().isVisible());
-// ITI initializes on idle time, so wait for it before checking.
-await page.locator('.form-wrap .iti').first().waitFor({ timeout: 4000 });
 check('intl-tel-input mounted', await page.locator('.form-wrap .iti').count() >= 1);
 
 // Country dropdown must be readable on the dark theme (dark dialog, light text)
-await page.locator('.form-wrap .iti__selected-country').first().waitFor({ timeout: 4000 });
 await page.locator('.form-wrap .iti__selected-country').first().click();
 await page.waitForTimeout(400);
 const dd = await page.evaluate(() => {

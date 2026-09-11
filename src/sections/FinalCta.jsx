@@ -20,7 +20,6 @@ export default function FinalCta() {
             title="Create Your Account"
             subtitle="Start With $250. No Hidden Fees. Withdraw Anytime."
             buttonLabel="Register Now"
-            initOnVisible
           />
         </Reveal>
       </div>
