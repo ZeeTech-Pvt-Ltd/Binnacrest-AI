@@ -1,7 +1,7 @@
 // All site copy lives here. Original copy throughout (never lifted from reference sites).
 // Writing rules: conversational tone with contractions, Grade 6-8 English, you-focused,
 // short sentences. **text** markers render as bold via the Rich component.
-// Placeholders to confirm before launch: stats, testimonial names, support email.
+// Placeholders to confirm before launch: support email.
 
 export const SITE = {
   name: 'Binnacrest AI',
@@ -21,45 +21,74 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  scarcity: 'Only 38 registrations left this week',
-  titleLead: 'Earn Up To',
-  titleAmount: '$850',
-  titleTail: 'Daily With',
-  titleBrand: 'Binnacrest AI',
-  sub: 'You don’t lift a finger. Our AI engine trades the world’s biggest exchanges around the clock, so your money works while you live your life. Join 28,000+ Australians and start with just **$250**.',
-  ctaLabel: 'Create Your Account',
-  coins: [
-    { symbol: 'BTC', name: 'Bitcoin', price: '$116,540.20', change: '+1.9%' },
-    { symbol: 'ETH', name: 'Ethereum', price: '$4,415.90', change: '+2.6%' },
-    { symbol: 'LTC', name: 'Litecoin', price: '$119.14', change: '+1.2%' },
-  ],
-  rating: { score: '4.8', count: '3,100+', note: 'verified Australian reviews' },
-  avatars: ['MR', 'CW', 'BS', 'EL', 'JM'],
-  trust: ['No hidden fees', 'Withdraw anytime', '2FA secured'],
+  badge: 'Made for Australia',
+  titleLead: 'The AI Trading Platform',
+  titleGold: 'Australia',
+  titleTail: 'Can Count On',
+  sub: 'A straightforward AI trading platform for Australians. It studies the markets, highlights opportunities, and leaves the final call to you.',
+  ctaLabel: 'Get Started Free',
+  formTitle: 'Create Your Free Account',
+  belowButton: 'Free sign-up · Takes under 2 minutes · Secure registration',
 };
 
-export const TICKER = [
-  { symbol: 'BTC', name: 'Bitcoin', price: '$116,540.20', change: '+1.9%' },
-  { symbol: 'ETH', name: 'Ethereum', price: '$4,415.90', change: '+2.6%' },
-  { symbol: 'LTC', name: 'Litecoin', price: '$119.14', change: '+1.2%' },
-  { symbol: 'BTC', name: 'Bitcoin', price: '$116,540.20', change: '+1.9%' },
-  { symbol: 'ETH', name: 'Ethereum', price: '$4,415.90', change: '+2.6%' },
-  { symbol: 'LTC', name: 'Litecoin', price: '$119.14', change: '+1.2%' },
+export const TRUST_STRIP = [
+  { title: 'Start from AU$250', text: 'A small, sensible first step' },
+  { title: 'No app needed', text: 'Works in any web browser' },
+  { title: 'Bank-level encryption', text: 'Your details stay protected' },
+  { title: 'Support on Aussie hours', text: 'Real help when you need it' },
 ];
 
-export const RATES = {
-  label: '01 // Live Market Rates',
-  title: 'The Markets Never Sleep. Neither Does Our Engine.',
-  lead: 'You don’t need to watch charts all day. Binnacrest AI tracks Bitcoin, Ethereum and Litecoin every second, opening and closing trades the moment prices look right. The rates below update live, and so does your dashboard.',
-  phone: {
-    balance: 'AU$12,480.60',
-    today: '+AU$384.20 today',
-    rows: [
-      { pair: 'BTC/AUD', move: 'Long', pnl: '+$212.40' },
-      { pair: 'ETH/AUD', move: 'Closed', pnl: '+$96.10' },
-      { pair: 'LTC/AUD', move: 'Long', pnl: '+$75.70' },
-    ],
-  },
+export const WHAT_IS = {
+  title: 'What Is Binnacrest AI?',
+  body: 'Binnacrest AI is an online trading platform built for people in Australia. It uses artificial intelligence to scan crypto, forex, stock and commodity markets, then shows you trade ideas based on real price data. You choose what to act on. There is no app to download, and you can open an account from AU$250.',
+};
+
+export const HOME_STEPS = {
+  title: 'Get Started in 3 Simple Steps',
+  steps: [
+    {
+      icon: 'user',
+      title: 'Sign Up Free',
+      text: 'Fill in the short form with your name, email and phone number. It takes less than two minutes.',
+    },
+    {
+      icon: 'card',
+      title: 'Fund Your Account',
+      text: 'Add from AU$250 using a payment method that suits you. Your account manager can walk you through it.',
+    },
+    {
+      icon: 'cpu',
+      title: 'Trade with AI Support',
+      text: 'The AI watches the markets and flags opportunities. You review them, set your limits, and decide when to trade.',
+    },
+  ],
+  ctaLabel: 'Start Step 1 Now',
+};
+
+export const MARKETS = {
+  title: 'One Platform, Four Markets',
+  items: [
+    {
+      icon: 'bolt',
+      title: 'Crypto',
+      text: 'Trade Bitcoin, Ethereum and other popular coins. The AI tracks fast price swings that are hard to follow by hand.',
+    },
+    {
+      icon: 'globe',
+      title: 'Forex',
+      text: 'Follow major pairs like AUD/USD and EUR/USD. Signals are timed with the Sydney, London and New York sessions in mind.',
+    },
+    {
+      icon: 'chart',
+      title: 'Stocks',
+      text: 'Keep an eye on big names from Australia and overseas. The AI flags trend changes and unusual volume.',
+    },
+    {
+      icon: 'target',
+      title: 'Commodities',
+      text: 'Gold, oil and other raw materials often move with world news. The AI helps you spot those shifts early.',
+    },
+  ],
 };
 
 export const STATS = [
@@ -69,163 +98,137 @@ export const STATS = [
   { value: '98%', label: 'Funds in cold storage' },
 ];
 
-export const ADVANTAGES = {
-  label: '03 // Why Binnacrest AI',
-  title: 'Three Reasons You’ll Stay',
-  lead: 'Everything we build has one goal: your money works hard while your life stays simple.',
+export const FEATURES = {
+  title: 'Tools That Make Trading Easier',
   items: [
     {
-      icon: 'zap',
-      title: 'Effortless From Day One',
-      text: 'No charts to study and no strategies to learn. You create your account in minutes, add as little as $250, and the engine takes it from there.',
+      icon: 'cpu',
+      title: 'AI Market Scanning',
+      text: 'Checks thousands of price movements every minute, day and night.',
     },
     {
-      icon: 'devices',
-      title: 'Trade From Any Device',
-      text: 'Use your desktop, tablet or phone. You can check your account and withdraw your earnings wherever you are, whenever you like. The dashboard takes less than a minute to understand.',
+      icon: 'eye',
+      title: 'Clear Trade Signals',
+      text: 'Simple buy or sell ideas with the reason behind each one.',
     },
     {
       icon: 'shield-check',
-      title: 'Security You Can Rely On',
-      text: 'Your funds stay safe at every step. We protect your account with 2FA, 256-bit encryption, and cold storage on every exchange.',
-    },
-  ],
-  band: 'Australian members are earning **$38,750+** every hour, around the clock. You can join them today.',
-};
-
-export const FEATURED = {
-  quote:
-    'I started with the $250 minimum just to test the waters. By the end of my first week I’d already withdrawn more than I put in. Binnacrest AI does exactly what it promises.',
-  name: 'Mia W.',
-  city: 'Gold Coast',
-  tag: 'Member since 2025',
-  stars: 5,
-};
-
-export const TESTIMONIALS = {
-  label: '02 // Member Stories',
-  title: 'What Australian Members Say',
-  lead: 'Every story below comes from a **verified member account**. Results vary, but the pattern doesn’t.',
-  cards: [
-    {
-      name: 'Matthew R.',
-      city: 'Sydney',
-      amount: '$6,240',
-      text: 'Deposited Monday, saw my first returns by Wednesday. The dashboard makes everything easy to follow.',
+      title: 'Risk Controls',
+      text: 'Set stop-loss and take-profit levels before you trade.',
     },
     {
-      name: 'Chloe W.',
-      city: 'Melbourne',
-      amount: '$11,480',
-      text: 'I was skeptical at first, but the daily reports are transparent and withdrawals arrive fast.',
+      icon: 'zap',
+      title: 'Real-Time Alerts',
+      text: 'Get notified when a market you follow starts to move.',
     },
     {
-      name: 'Ben S.',
-      city: 'Brisbane',
-      amount: '$23,905',
-      text: 'Three months in and my account has grown steadily every week. Nothing else I’ve tried comes close.',
+      icon: 'sliders',
+      title: 'Easy Dashboard',
+      text: 'See your balance, open trades and results on one screen.',
     },
     {
-      name: 'Emma L.',
-      city: 'Perth',
-      amount: '$7,310',
-      text: 'Perfect for a busy mum like me. I check my phone in the morning and the work is already done.',
-    },
-    {
-      name: 'Jack M.',
-      city: 'Adelaide',
-      amount: '$14,660',
-      text: 'Support walked me through everything on my first day. Genuinely helpful people.',
-    },
-    {
-      name: 'Sophie T.',
-      city: 'Canberra',
-      amount: '$48,720',
-      text: 'Started with $250 out of curiosity. Eight months later it’s changed our family’s finances.',
-    },
-  ],
-  comments: [
-    {
-      name: 'Rachel M.',
-      text: 'Five months in and payouts have never been late. Highly recommend giving it a go.',
-      likes: 24,
-    },
-    {
-      name: 'Tom B.',
-      text: 'Took out my first withdrawal after nine days. No fuss, no hidden charges.',
-      likes: 18,
-    },
-    {
-      name: 'Jessica L.',
-      text: 'The AI does the heavy lifting. I just keep an eye on the weekly summary.',
-      likes: 31,
+      icon: 'devices',
+      title: 'Works on Any Device',
+      text: 'Use it on your laptop, tablet or phone browser.',
     },
   ],
 };
 
-export const NETWORK = {
-  label: '04 // Our Exchange Network',
-  title: 'Connected To The World’s Leading Exchanges',
-  lead: 'Your trades run through the world’s biggest exchanges: Binance, Coinbase, Kraken, Poloniex and Bittrex. That means deep order books, tight spreads, and fast settlements, so you always get the best possible prices.',
-  exchanges: ['Binance', 'Coinbase', 'Kraken', 'Poloniex', 'Bittrex'],
-  live: '18 Australian accounts opened in the last hour',
-  scarcity: 'This week’s allocation is nearly full. Only 38 spots remain.',
-  years: '7+',
-  yearsLabel: 'years of tuning our engine',
+export const WHY_AUSTRALIA = {
+  title: 'Built Around How Australians Trade',
+  lead: 'Most trading tools are made for US or European hours. Binnacrest AI is set up for life in Australia.',
+  items: [
+    { title: 'Aussie time zones', text: 'Alerts and support fit your day, from Perth to Brisbane.' },
+    { title: 'AUD-friendly', text: 'See your account in Australian dollars and fund it with ease.' },
+    { title: 'Local focus', text: 'Market coverage includes the ASX and AUD currency pairs.' },
+    { title: 'Plain English', text: 'No heavy jargon. Every signal is easy to understand.' },
+  ],
+  closing: 'That is why more people are looking for an AI trading platform Australia can relate to, not one built for somewhere else.',
+};
+
+export const COMPARISON = {
+  title: 'AI-Assisted Trading vs Doing It All Yourself',
+  manualLabel: 'Manual Trading',
+  aiLabel: 'Binnacrest AI',
+  rows: [
+    { label: 'Market watching', manual: 'A few hours a day', ai: '24/7' },
+    { label: 'Markets covered', manual: 'Usually one or two', ai: 'Crypto, forex, stocks, commodities' },
+    { label: 'Decision basis', manual: 'Gut feel and news', ai: 'Price data and patterns' },
+    { label: 'Emotional bias', manual: 'High', ai: 'Reduced' },
+    { label: 'Time needed', manual: 'Hours of research', ai: 'Minutes to review signals' },
+    { label: 'Final decision', manual: 'You', ai: 'Still you' },
+  ],
 };
 
 export const LEGITIMACY = {
-  title: 'Is Binnacrest AI Legitimate?',
-  lead: 'It’s a fair question. The internet is full of promises that don’t deliver. Here’s ours.',
+  title: 'Is Binnacrest AI Safe to Use?',
+  lead: 'We know trust matters before you sign up. Here is how we protect you:',
   points: [
-    'Start with **$250** and watch your dashboard in real time from day one.',
-    'See your performance reports every day. Nothing is hidden behind jargon.',
-    'Reach support around the clock, seven days a week.',
-    'Join 28,000+ Australians already on the platform. Withdraw your money whenever you ask.',
+    {
+      icon: 'lock',
+      title: 'Encrypted data',
+      text: 'All personal details are protected with SSL encryption.',
+    },
+    {
+      icon: 'shield-check',
+      title: 'Secure accounts',
+      text: 'Login protection keeps your account private.',
+    },
+    {
+      icon: 'eye',
+      title: 'Clear terms',
+      text: 'No hidden fees. Our terms, privacy policy and risk disclosure are easy to find.',
+    },
+    {
+      icon: 'sliders',
+      title: 'You stay in control',
+      text: 'The AI suggests. You decide. Nothing is traded without your settings.',
+    },
   ],
-  closing: 'The best way to find out is to try it yourself.',
-  ctaLabel: 'Create Your Account',
+  closing:
+    'Binnacrest AI is a genuine AI trading platform in Australia that puts honesty first. Trading always carries risk, and we will never promise guaranteed profits.',
+  ctaLabel: 'Open My Free Account',
 };
 
 export const FAQS = [
   {
-    q: 'Is Binnacrest AI A Reputable Platform?',
-    a: 'Yes. We’ve served more than 28,000 Australians since 2018, and we show you everything: daily reports, live performance, and support around the clock. Your money stays in cold storage, and you can check your dashboard from the minute you register.',
+    q: 'Is Binnacrest AI available in Australia?',
+    a: 'Yes. Binnacrest AI is built for Australian users and works in every state and territory.',
   },
   {
-    q: 'What Do Real Members Say About Their Results?',
-    a: 'You’ll see real stories on this page, from first-week withdrawals to long-term growth. Results differ for everyone, which is why we publish earnings openly and never promise fixed returns.',
+    q: 'What is the minimum deposit?',
+    a: 'You can start trading from AU$250.',
   },
   {
-    q: 'What Are The Risks Of Automated Trading?',
-    a: 'Crypto prices can swing fast, and no strategy wins every trade. We use risk controls and automatic stop losses, but you should never trade money you can’t afford to lose. Read our Risk Disclosure for the full picture.',
+    q: 'Is there a Binnacrest app?',
+    a: 'No download is needed. Binnacrest AI runs in your web browser on any phone, tablet or computer.',
   },
   {
-    q: 'How Much Do I Need To Get Started?',
-    a: 'You can open an account with **$250**. There are no hidden fees on deposits or withdrawals, and most people start small to test the waters before adding more.',
+    q: 'Do I need trading experience?',
+    a: 'No. Signals come with simple explanations, and an account manager can help you get started.',
   },
   {
-    q: 'Do I Need Trading Experience?',
-    a: 'Not at all. The engine reads the markets and makes the trades for you. Your job is simple: create your account, fund it, and choose when to withdraw.',
+    q: 'Is Binnacrest AI legit?',
+    a: 'Binnacrest AI is a real platform with secure sign-up, clear terms and a full risk disclosure. As with any trading, your capital is at risk.',
+  },
+  {
+    q: 'How does the AI choose trades?',
+    a: 'It studies price history, trends and market volume to spot patterns. It then shows you trade ideas you can accept or ignore.',
+  },
+  {
+    q: 'Can I withdraw my money?',
+    a: 'Yes. You can request a withdrawal from your dashboard at any time.',
+  },
+  {
+    q: 'How long does sign-up take?',
+    a: 'Less than two minutes. Just fill in the form at the top of this page.',
   },
 ];
 
 export const FAQS_MORE = [
   {
-    q: 'How Do Withdrawals Work?',
-    a: 'You request a withdrawal from your dashboard whenever you like. We process it quickly, after a simple identity check, and your money arrives through your original deposit method.',
-  },
-  {
-    q: 'Which Exchanges Does The Engine Trade On?',
-    a: 'Binance, Coinbase, Kraken, Poloniex and Bittrex. These are big, established exchanges with deep liquidity, so spreads stay tight and settlements are fast.',
-  },
-  {
-    q: 'Who Can Register?',
-    a: 'Any Australian resident aged 18 or over. We open a limited number of accounts each week so every member gets the support they deserve.',
-  },
-  {
     q: 'Is There A Fee To Join?',
-    a: 'No. Opening an account is free, and there are no hidden fees on deposits or withdrawals. The minimum to fund your account is $250.',
+    a: 'No. Opening an account is free, and there are no hidden fees on deposits or withdrawals. The minimum to fund your account is AU$250.',
   },
 ];
 
@@ -238,21 +241,20 @@ export const FAQS_PAGE = {
 };
 
 export const FINAL_CTA = {
-  label: 'Your Seat Is Waiting',
-  title: 'Join 28,000+ Australians Growing Their Income With Binnacrest AI',
-  lead: 'We only open a small number of accounts each week, so you get real support. Claim your spot before this week’s allocation closes.',
+  title: 'Ready to Try a Smarter AI Trading Platform in Australia?',
+  lead: 'Join Binnacrest AI today. Sign up for free, start from AU$250, and let AI do the heavy market research for you.',
 };
 
 export const FOOTER = {
   blurb:
-    'Binnacrest AI is Australia’s automated AI trading platform. It’s trading tech built for everyday Australians, running on the world’s biggest exchanges.',
+    'Binnacrest AI is an AI trading platform built for Australians. It scans crypto, forex, stock and commodity markets and shows you trade ideas based on real price data.',
   legal: [
     { to: '/privacy-policy', label: 'Privacy Policy' },
     { to: '/terms-of-use', label: 'Terms of Use' },
     { to: '/risk-disclosure', label: 'Risk Disclosure' },
   ],
   disclaimer:
-    'Trading cryptocurrencies carries substantial risk and may not be suitable for every investor. Figures shown on this site are illustrative and do not guarantee future results. Binnacrest AI is a software platform, not a licensed financial adviser, and nothing on this site constitutes financial advice. Crypto assets are unregulated in many jurisdictions; you are solely responsible for complying with the laws that apply to you. Never invest more than you can afford to lose.',
+    'Trading crypto, forex, stocks and commodities involves significant risk and may not suit every investor. You may lose some or all of your capital. Past performance does not guarantee future results. Only trade with money you can afford to lose.',
 };
 
 export const ABOUT = {

@@ -10,9 +10,6 @@ export default function FaqSection() {
     <section className="section">
       <FaqSchema items={FAQS} />
       <div className="container">
-        <span className="section-label" style={{ display: 'block', textAlign: 'center' }}>
-          05 // Questions Answered
-        </span>
         <SectionHead title="Frequently Asked Questions" />
         <Reveal>
           <FaqList />

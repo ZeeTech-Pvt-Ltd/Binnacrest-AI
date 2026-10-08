@@ -1,4 +1,3 @@
-import Icon from '../components/Icon.jsx';
 import Rich from '../components/Rich.jsx';
 import RegistrationForm from '../components/RegistrationForm.jsx';
 import { HERO } from '../data/content.js';
@@ -11,65 +10,21 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero__grid">
         <div>
-          <span className="hero__scarcity">{HERO.scarcity}</span>
+          <span className="hero__badge">{HERO.badge}</span>
           <h1>
-            {HERO.titleLead} <span className="serif-italic gold-text">{HERO.titleAmount}</span>{' '}
-            {HERO.titleTail} <span className="gold-text">{HERO.titleBrand}</span>
+            {HERO.titleLead} {HERO.titleGold} {HERO.titleTail}
           </h1>
           <p className="hero__sub">
             <Rich text={HERO.sub} />
           </p>
-
-          <div className="hero__coins">
-            {HERO.coins.map((c) => (
-              <span className="coin-chip" key={c.symbol}>
-                <span className="coin-chip__icon">{c.symbol}</span>
-                <span className="coin-chip__meta">
-                  <span className="coin-chip__symbol">{c.name}</span>
-                  <br />
-                  <span className="coin-chip__price">
-                    {c.price} <span className="coin-chip__change">{c.change}</span>
-                  </span>
-                </span>
-              </span>
-            ))}
-          </div>
-
-          <div className="hero__rating">
-            <div className="avatar-cluster">
-              {HERO.avatars.map((a) => (
-                <span key={a}>{a}</span>
-              ))}
-            </div>
-            <div>
-              <div className="hero__rating-stars" aria-hidden="true">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Icon key={i} name="star" size={15} />
-                ))}
-              </div>
-              <p className="hero__rating-text">
-                <strong>{HERO.rating.score}/5</strong> from {HERO.rating.count}{' '}
-                {HERO.rating.note}
-              </p>
-            </div>
-          </div>
-
-          <div className="hero__trust">
-            {HERO.trust.map((t) => (
-              <span key={t}>
-                <Icon name="check" size={15} />
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
 
         <div>
           <RegistrationForm
             idPrefix="hero"
-            title="Create Your Account"
-            subtitle="Registration Is Limited To Verified Residents Of Australia."
-            buttonLabel="Register Now"
+            title={HERO.formTitle}
+            buttonLabel={HERO.ctaLabel}
+            belowButton={HERO.belowButton}
           />
         </div>
       </div>

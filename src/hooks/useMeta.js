@@ -20,10 +20,10 @@ const setOrCreate = (attr, value, content) => {
 
 const BASE_KEYWORDS = [
   'Binnacrest AI',
+  'AI trading platform Australia',
   'AI trading platform',
-  'automated trading',
-  'AI trading engine',
   'trading platform Australia',
+  'AI market insights',
 ];
 
 export default function useMeta({ title, description, path = '/', keywords = [], robots }) {

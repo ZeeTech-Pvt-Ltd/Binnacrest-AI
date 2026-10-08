@@ -11,8 +11,9 @@ import { SITE } from '../data/content.js';
 export default function RegistrationForm({
   idPrefix = 'hero',
   title = 'Create Your Account',
-  subtitle = 'Registration Is Limited To Verified Residents Of Australia.',
+  subtitle = '',
   buttonLabel = 'Register Now',
+  belowButton = '',
   showConsent = true,
 }) {
   const navigate = useNavigate();
@@ -172,7 +173,7 @@ export default function RegistrationForm({
   return (
     <form className="form form-wrap" onSubmit={handleSubmit} noValidate>
       <h2 className="form__title">{title}</h2>
-      <p className="form__sub">{subtitle}</p>
+      {subtitle && <p className="form__sub">{subtitle}</p>}
 
       {formError && (
         <div className="form__error" role="alert">
@@ -272,6 +273,7 @@ export default function RegistrationForm({
       </button>
 
       <p className="form__note">Protected by 2FA and 256-bit SSL encryption</p>
+      {belowButton && <p className="form__microcopy">{belowButton}</p>}
     </form>
   );
 }
