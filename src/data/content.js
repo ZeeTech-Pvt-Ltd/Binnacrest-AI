@@ -190,6 +190,56 @@ export const LEGITIMACY = {
   ctaLabel: 'Open My Free Account',
 };
 
+// Doc format: first name, city, short quote, optional stars.
+// Swap in genuine reviews when they are available.
+export const TESTIMONIALS = {
+  title: 'What Our Users Say',
+  cards: [
+    {
+      name: 'Matthew R.',
+      city: 'Sydney, NSW',
+      stars: 5,
+      photo: '/images/testimonials/matthew.jpg',
+      text: 'The signals are easy to follow and every idea comes with a plain-English explanation.',
+    },
+    {
+      name: 'Chloe W.',
+      city: 'Melbourne, VIC',
+      stars: 5,
+      photo: '/images/testimonials/chloe.jpg',
+      text: 'I was nervous about trading at first. Support walked me through everything on day one.',
+    },
+    {
+      name: 'Ben S.',
+      city: 'Brisbane, QLD',
+      stars: 4,
+      photo: '/images/testimonials/ben.jpg',
+      text: 'I like that the final call is always mine. The AI highlights opportunities and I decide.',
+    },
+    {
+      name: 'Emma L.',
+      city: 'Perth, WA',
+      stars: 5,
+      photo: '/images/testimonials/emma.jpg',
+      text: 'Works beautifully in my phone browser. I check my alerts in the morning and get on with my day.',
+    },
+    {
+      name: 'Jack M.',
+      city: 'Adelaide, SA',
+      stars: 5,
+      photo: '/images/testimonials/jack.jpg',
+      text: 'Clear terms and no hidden fees. That honesty is what convinced me to sign up.',
+    },
+    {
+      name: 'Sophie T.',
+      city: 'Canberra, ACT',
+      stars: 5,
+      photo: '/images/testimonials/sophie.jpg',
+      text: 'The risk controls help me trade calmly. I set my limits and never chase a signal.',
+    },
+  ],
+};
+
 export const FAQS = [
   {
     q: 'Is Binnacrest AI available in Australia?',

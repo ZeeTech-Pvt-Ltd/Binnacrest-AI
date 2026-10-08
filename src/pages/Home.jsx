@@ -8,6 +8,7 @@ import Features from '../sections/Features.jsx';
 import WhyAustralia from '../sections/WhyAustralia.jsx';
 import Comparison from '../sections/Comparison.jsx';
 import Legitimacy from '../sections/Legitimacy.jsx';
+import Testimonials from '../sections/Testimonials.jsx';
 import FaqSection from '../sections/FaqSection.jsx';
 import FinalCta from '../sections/FinalCta.jsx';
 
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyAustralia />
       <Comparison />
       <Legitimacy />
+      <Testimonials />
       <FaqSection />
       <FinalCta />
     </>

@@ -1231,11 +1231,90 @@ button {
 
 /* ---------- Testimonials ---------- */
 
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.testimonials__viewport {
+  overflow: hidden;
+}
+
+.testimonials__track {
+  display: flex;
   gap: 22px;
-  margin-bottom: 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 4px 10px;
+}
+
+.testimonials__track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials__track > .testimonial-card {
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
+}
+
+.testimonials__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.testimonials__arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--gold);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.testimonials__arrow:hover:not(:disabled) {
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.testimonials__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.testimonials__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: var(--line-soft);
+  transition: background 0.15s ease, width 0.15s ease;
+}
+
+.testimonials__dot.is-active {
+  background: var(--gold);
+  width: 22px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .testimonials__track > .testimonial-card {
+    flex: 0 0 calc((100% - 22px) / 2);
+  }
+}
+
+@media (max-width: 680px) {
+  .testimonials__track > .testimonial-card {
+    flex: 0 0 100%;
+  }
 }
 
 .testimonial-card {
@@ -1270,6 +1349,14 @@ button {
   background: var(--surface-2);
   box-shadow: inset 0 0 0 1px var(--line);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.testimonial-card__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .testimonial-card__name {
