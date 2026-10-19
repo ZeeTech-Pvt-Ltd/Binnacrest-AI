@@ -1235,6 +1235,19 @@ button {
   overflow: hidden;
 }
 
+/* Reviews page grid (all cards, no carousel) */
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .testimonials__track {
   display: flex;
   gap: 22px;

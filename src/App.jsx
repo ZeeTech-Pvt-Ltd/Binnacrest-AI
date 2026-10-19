@@ -7,6 +7,8 @@ import Home from './pages/Home.jsx';
 // Route-level code splitting: only the homepage bundle loads up front.
 const AboutUs = lazy(() => import('./pages/AboutUs.jsx'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks.jsx'));
+const Features = lazy(() => import('./pages/Features.jsx'));
+const Reviews = lazy(() => import('./pages/Reviews.jsx'));
 const Faqs = lazy(() => import('./pages/Faqs.jsx'));
 const Contacts = lazy(() => import('./pages/Contacts.jsx'));
 const SignUp = lazy(() => import('./pages/SignUp.jsx'));
@@ -35,6 +37,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/faq" element={<Faqs />} />
             <Route path="/contact-us" element={<Contacts />} />
             <Route path="/sign-up" element={<SignUp />} />

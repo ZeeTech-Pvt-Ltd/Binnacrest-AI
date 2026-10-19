@@ -1,3 +1,4 @@
+import Icon from '../components/Icon.jsx';
 import Rich from '../components/Rich.jsx';
 import RegistrationForm from '../components/RegistrationForm.jsx';
 import { HERO } from '../data/content.js';
@@ -17,6 +18,15 @@ export default function Hero() {
           <p className="hero__sub">
             <Rich text={HERO.sub} />
           </p>
+
+          <div className="hero__trust">
+            {HERO.bullets.map((b) => (
+              <span key={b.text}>
+                <Icon name={b.icon} size={15} />
+                {b.text}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div>

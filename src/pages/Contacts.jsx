@@ -48,7 +48,7 @@ export default function Contacts() {
             <RegistrationForm
               idPrefix="contact"
               title="Create Your Account"
-              subtitle="Registration Is Limited To Verified Residents Of Australia."
+              subtitle="Registration is open to Australian residents aged 18 or over."
               buttonLabel="Register Now"
             />
           </Reveal>

@@ -3,9 +3,9 @@ import useMeta from '../hooks/useMeta.js';
 
 export default function NotFound() {
   useMeta({
-    title: 'Page Not Found | Binnacrest AI',
+    title: 'Page Not Found | Binnacrest AI Trading Platform Australia',
     description:
-      'The page you are looking for does not exist. Head back to the Binnacrest AI homepage and sign up today.',
+      'The page you are looking for does not exist. Head back to the Binnacrest AI homepage to explore the platform and sign up today.',
     path: '/404',
   });
 

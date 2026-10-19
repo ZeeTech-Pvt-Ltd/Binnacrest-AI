@@ -14,9 +14,9 @@ import FinalCta from '../sections/FinalCta.jsx';
 
 export default function Home() {
   useMeta({
-    title: 'Binnacrest AI | AI Trading Platform in Australia from AU$250',
+    title: 'Binnacrest AI: AI Trading Platform in Australia from AU$250',
     description:
-      'Binnacrest AI is a browser-based AI trading platform for Australians. Trade crypto, forex, stocks and commodities with AI market insights. Start from AU$250.',
+      'Binnacrest AI is a browser-based trading platform for Australians. AI insights across crypto, forex, stocks and commodities. Start from AU$250.',
     path: '/',
   });
 

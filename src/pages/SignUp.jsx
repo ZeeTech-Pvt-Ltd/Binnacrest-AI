@@ -43,7 +43,7 @@ export default function SignUp() {
             <RegistrationForm
               idPrefix="signup"
               title="Create Your Account"
-              subtitle="Registration Is Limited To Verified Residents Of Australia."
+              subtitle="Registration is open to Australian residents aged 18 or over."
               buttonLabel="Open My Account"
             />
           </Reveal>
