@@ -40,10 +40,10 @@ export const HERO = {
 };
 
 export const TRUST_STRIP = [
-  { title: 'Start from AU$250', text: 'A sensible first step' },
-  { title: 'No app needed', text: 'Runs in any web browser' },
-  { title: 'Bank-level encryption', text: 'Your details stay safe' },
-  { title: 'Support on Aussie hours', text: 'Help when you need it' },
+  { icon: 'card', title: 'Start from AU$250', text: 'A sensible first step' },
+  { icon: 'devices', title: 'No app needed', text: 'Runs in any web browser' },
+  { icon: 'lock', title: 'Bank-level encryption', text: 'Your details stay safe' },
+  { icon: 'headset', title: 'Support on Aussie hours', text: 'Help when you need it' },
 ];
 
 export const WHAT_IS = {
@@ -325,10 +325,10 @@ export const FOOTER = {
 };
 
 export const STATS = [
-  { value: 'AU$250', label: 'Minimum to start' },
-  { value: '4', label: 'Markets on one platform' },
-  { value: '2 min', label: 'Free sign-up' },
-  { value: '24/7', label: 'AI market scanning' },
+  { icon: 'card', value: 'AU$250', label: 'Minimum to start' },
+  { icon: 'globe', value: '4', label: 'Markets on one platform' },
+  { icon: 'clock', value: '2 min', label: 'Free sign-up' },
+  { icon: 'cpu', value: '24/7', label: 'AI market scanning' },
 ];
 
 export const ABOUT = {
@@ -340,9 +340,18 @@ export const ABOUT = {
     'Built in Australia, for Australians. We take advanced trading technology and make it as easy as opening an account.',
   storyTitle: 'Our Story',
   story: [
-    'Binnacrest AI started in 2018, when a small team of finance engineers and AI researchers asked one question: why should powerful trading tools belong only to professionals?',
-    'They decided it should not. So they built a platform that watches the world’s biggest markets around the clock, weighs thousands of signals, and turns them into trade ideas anyone can understand.',
-    'Seven years on, Australians in every state and territory use Binnacrest AI to follow the markets. Most of them started with no trading experience at all.',
+    {
+      year: '2018',
+      text: 'Binnacrest AI started in 2018, when a small team of finance engineers and AI researchers asked one question: why should powerful trading tools belong only to professionals?',
+    },
+    {
+      year: 'The Build',
+      text: 'They decided it should not. So they built a platform that watches the world’s biggest markets around the clock, weighs thousands of signals, and turns them into trade ideas anyone can understand.',
+    },
+    {
+      year: 'Today',
+      text: 'Seven years on, Australians in every state and territory use Binnacrest AI to follow the markets. Most of them started with no trading experience at all.',
+    },
   ],
   valuesTitle: 'What We Stand For',
   values: [

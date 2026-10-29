@@ -4,6 +4,10 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 import '../styles/global.css';
+import '../styles/home.css';
+import '../styles/how-it-works.css';
+import '../styles/inner-pages.css';
+import '../styles/legal.css';
 import 'intl-tel-input/dist/css/intlTelInput.min.css';
 
 // Variable names match the CSS vars in global.css, so the stylesheet needs
@@ -32,6 +36,11 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://binnacrest-ai.com/'),
+  alternates: {
+    // Resolves per route against metadataBase, e.g. /reviews ->
+    // https://binnacrest-ai.com/reviews
+    canonical: './',
+  },
   title: 'Binnacrest AI: AI Trading Platform in Australia from AU$250',
   description:
     'Binnacrest AI is a browser-based trading platform for Australians. AI insights across crypto, forex, stocks and commodities. Start from AU$250.',

@@ -1,0 +1,318 @@
+/* ============================================================
+   INNER PAGES — Refined Midnight Gold (About Us + Features)
+   Scoped to .about-page and .features-page. Imported after
+   global.css, home.css and how-it-works.css.
+   ============================================================ */
+
+/* ---------- Shared page hero ---------- */
+
+.about-page .page-hero,
+.features-page .page-hero {
+  background:
+    radial-gradient(720px 420px at 85% -10%, rgba(212, 175, 55, 0.14), transparent 62%),
+    radial-gradient(560px 360px at 5% 110%, rgba(212, 175, 55, 0.08), transparent 60%),
+    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    var(--bg);
+  background-size:
+    auto,
+    auto,
+    56px 56px,
+    56px 56px,
+    auto;
+}
+
+.about-page .page-hero h1,
+.features-page .page-hero h1 {
+  font-size: clamp(34px, 5vw, 50px);
+  text-wrap: balance;
+}
+
+/* ---------- About: story timeline ---------- */
+
+.about-story__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* Horizontal gold connector through the nodes (desktop) */
+.about-story__timeline::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55) 15%, rgba(212, 175, 55, 0.55) 85%, transparent);
+}
+
+.about-story__beat {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+}
+
+.about-story__node {
+  position: relative;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+.about-story__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f5d67c, var(--gold) 60%, var(--gold-deep));
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.55);
+}
+
+.about-story__beat-card {
+  width: 100%;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(16, 21, 42, 0.85), rgba(10, 14, 26, 0.9));
+  padding: 26px 26px 24px;
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-story__beat-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  transform: translateY(-3px);
+}
+
+.about-story__year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.07);
+  padding: 4px 14px;
+  margin-bottom: 14px;
+}
+
+.about-story__beat-card p {
+  color: var(--muted);
+  font-size: 15px;
+  text-align: left;
+}
+
+@media (max-width: 860px) {
+  .about-story__timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 560px;
+  }
+  /* Vertical spine on mobile */
+  .about-story__timeline::before {
+    top: 8px;
+    bottom: 8px;
+    left: 7px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.55) 12%, rgba(212, 175, 55, 0.55) 88%, transparent);
+  }
+  .about-story__beat {
+    grid-template-columns: 15px 1fr;
+    justify-items: start;
+    gap: 20px;
+    padding: 14px 0;
+  }
+  .about-story__beat-card {
+    text-align: left;
+  }
+}
+
+/* ---------- About: stats band ---------- */
+
+.about-page .stats-band {
+  background:
+    radial-gradient(600px 300px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  padding: 60px 0;
+}
+
+.about-page .stat {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.05), rgba(16, 21, 42, 0.55));
+  padding: 30px 20px 26px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-page .stat:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  transform: translateY(-3px);
+}
+
+.about-page .stat + .stat::before {
+  display: none;
+}
+
+.about-page .stat__icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  border: 1px solid var(--line);
+  background: rgba(212, 175, 55, 0.07);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.about-page .stat__value {
+  color: var(--gold-light);
+}
+
+/* ---------- About: values ---------- */
+
+.about-page .about__values .feature-card {
+  background: linear-gradient(180deg, rgba(16, 21, 42, 0.8), rgba(10, 14, 26, 0.85));
+}
+
+.about-page .about__values .feature-card::before {
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+}
+
+.about-page .about__values .feature-card:hover .feature-card__icon {
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.35);
+}
+
+/* ---------- About: difference panel ---------- */
+
+.about-diff__panel {
+  max-width: 820px;
+  margin: 0 auto;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(16, 21, 42, 0.7), rgba(10, 14, 26, 0.85));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  padding: 36px 38px;
+}
+
+.about-diff__grid {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+
+.about-diff__grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--ink);
+  font-size: 15.5px;
+}
+
+.about-diff__check {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold-ink);
+  background: linear-gradient(135deg, #f5d67c, var(--gold));
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  margin-top: 2px;
+}
+
+/* ---------- About: final CTA panel ---------- */
+
+.about-page .final-cta {
+  background:
+    radial-gradient(760px 420px at 50% 0%, rgba(212, 175, 55, 0.16), transparent 66%),
+    var(--bg-deep);
+}
+
+.about-page .final-cta .container {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(16, 21, 42, 0.7), rgba(10, 14, 26, 0.85));
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  padding: 64px 40px;
+}
+
+.about-page .final-cta .btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-gold), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.about-page .final-cta .btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+
+.about-page .final-cta .btn:hover::after {
+  left: 130%;
+}
+
+/* ---------- Features page cards ---------- */
+
+.features-page .features__grid .feature-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(16, 21, 42, 0.8), rgba(10, 14, 26, 0.85));
+}
+
+.features-page .features__grid .feature-card::before {
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+}
+
+.features-page .features__grid .feature-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.features-page .features__grid .feature-card:hover .feature-card__icon {
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.35);
+}
+
+.features-page__num {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(212, 175, 55, 0.55);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .about-story__card {
+    padding: 36px 26px 32px;
+  }
+  .about-diff__panel {
+    padding: 26px 22px;
+  }
+  .about-page .final-cta .container {
+    padding: 44px 22px;
+  }
+}

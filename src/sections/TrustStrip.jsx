@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal.jsx';
+import Icon from '../components/Icon.jsx';
 import { TRUST_STRIP } from '../data/content.js';
 
 export default function TrustStrip() {
@@ -7,6 +8,9 @@ export default function TrustStrip() {
       <div className="container trust-strip__grid">
         {TRUST_STRIP.map((t, i) => (
           <Reveal key={t.title} delay={i * 90} className="trust-strip__item">
+            <div className="trust-strip__icon">
+              <Icon name={t.icon} size={20} />
+            </div>
             <div className="trust-strip__title">{t.title}</div>
             <div className="trust-strip__text">{t.text}</div>
           </Reveal>

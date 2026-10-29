@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Features() {
   return (
-    <>
+    <div className="features-page">
       <div className="page-hero">
         <div className="container">
           <Reveal>
@@ -24,7 +24,8 @@ export default function Features() {
         <div className="container">
           <div className="features__grid">
             {FEATURES.items.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 100} className="feature-card">
+              <Reveal key={f.title} delay={(i % 3) * 100} className="feature-card features-page__card">
+                <span className="features-page__num">0{i + 1}</span>
                 <div className="feature-card__icon">
                   <Icon name={f.icon} size={24} />
                 </div>
@@ -35,6 +36,6 @@ export default function Features() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

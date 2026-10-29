@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function HowItWorks() {
   return (
-    <>
+    <div className="how-page">
       <div className="page-hero">
         <div className="container">
           <Reveal>
@@ -25,17 +25,22 @@ export default function HowItWorks() {
 
       <section className="section">
         <div className="container">
-          <div className="steps__grid">
+          <div className="how-timeline">
             {HOW_IT_WORKS.steps.map((s, i) => (
-              <Reveal key={s.title} delay={i * 100} className="feature-card">
-                <span className="step-num">Step {i + 1}</span>
-                <div className="feature-card__icon">
-                  <Icon name={s.icon} size={24} />
+              <Reveal key={s.title} delay={i * 100} className="how-timeline__row">
+                <div className="how-timeline__node">
+                  <div className="how-timeline__icon">
+                    <Icon name={s.icon} size={22} />
+                  </div>
+                  <span className="how-timeline__num">0{i + 1}</span>
                 </div>
-                <h3>{s.title}</h3>
-                <p>
-                  <Rich text={s.text} />
-                </p>
+                <div className="how-timeline__card">
+                  <span className="how-timeline__step">Step {i + 1}</span>
+                  <h3>{s.title}</h3>
+                  <p>
+                    <Rich text={s.text} />
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -46,14 +51,18 @@ export default function HowItWorks() {
         <div className="container">
           <SectionHead title={HOW_IT_WORKS.perksTitle} />
           <Reveal>
-            <ul className="signup__points" style={{ maxWidth: 680, margin: '0 auto' }}>
-              {HOW_IT_WORKS.perks.map((p) => (
-                <li key={p.slice(0, 24)}>
-                  <Icon name="check" size={18} />
-                  {p}
-                </li>
-              ))}
-            </ul>
+            <div className="how-perks__panel">
+              <ul className="how-perks__grid">
+                {HOW_IT_WORKS.perks.map((p) => (
+                  <li key={p.slice(0, 24)}>
+                    <span className="how-perks__check">
+                      <Icon name="check" size={15} />
+                    </span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -69,6 +78,6 @@ export default function HowItWorks() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }

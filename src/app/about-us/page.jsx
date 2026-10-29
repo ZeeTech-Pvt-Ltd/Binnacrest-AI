@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function AboutUs() {
   return (
-    <>
+    <div className="about-page">
       <div className="page-hero">
         <div className="container">
           <Reveal>
@@ -23,13 +23,21 @@ export default function AboutUs() {
       </div>
 
       <section className="section">
-        <div className="container about__story">
+        <div className="container">
           <SectionHead title={ABOUT.storyTitle} />
-          {ABOUT.story.map((p) => (
-            <Reveal key={p.slice(0, 24)}>
-              <p>{p}</p>
-            </Reveal>
-          ))}
+          <div className="about-story__timeline">
+            {ABOUT.story.map((beat, i) => (
+              <Reveal key={beat.year} delay={i * 100} className="about-story__beat">
+                <div className="about-story__node">
+                  <span className="about-story__dot" />
+                </div>
+                <div className="about-story__beat-card">
+                  <span className="about-story__year">{beat.year}</span>
+                  <p>{beat.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -37,6 +45,9 @@ export default function AboutUs() {
         <div className="container stats-band__grid">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 90} className="stat">
+              <div className="stat__icon">
+                <Icon name={s.icon} size={20} />
+              </div>
               <div className="stat__value gold-text">{s.value}</div>
               <div className="stat__label">{s.label}</div>
             </Reveal>
@@ -65,14 +76,18 @@ export default function AboutUs() {
         <div className="container">
           <SectionHead title={ABOUT.diffTitle} />
           <Reveal>
-            <ul className="about__diff">
-              {ABOUT.diff.map((d) => (
-                <li key={d.slice(0, 24)}>
-                  <Icon name="check" size={18} />
-                  {d}
-                </li>
-              ))}
-            </ul>
+            <div className="about-diff__panel">
+              <ul className="about-diff__grid">
+                {ABOUT.diff.map((d) => (
+                  <li key={d.slice(0, 24)}>
+                    <span className="about-diff__check">
+                      <Icon name="check" size={15} />
+                    </span>
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -88,6 +103,6 @@ export default function AboutUs() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }
