@@ -27,17 +27,8 @@ export default function Markets() {
         </Reveal>
 
         <Reveal className="markets__visual" delay={120}>
-          <div className="markets__radar" aria-hidden="true">
-            <div className="markets__radar-ring markets__radar-ring--1" />
-            <div className="markets__radar-ring markets__radar-ring--2" />
-            <div className="markets__radar-ring markets__radar-ring--3" />
-            <div className="markets__radar-sweep" />
-            <div className="markets__radar-core" />
-            {MARKETS.items.map((m, i) => (
-              <span className={`markets__orb markets__orb--${i + 1}`} key={m.icon}>
-                <Icon name={m.icon} size={20} />
-              </span>
-            ))}
+          <div className="markets__shot">
+            <img src="/images/new%20img.webp" alt="Binnacrest AI platform" loading="lazy" />
           </div>
         </Reveal>
       </div>
