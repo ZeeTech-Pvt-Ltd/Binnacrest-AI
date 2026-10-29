@@ -257,6 +257,12 @@
   place-items: center;
 }
 
+.home .markets__shot {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
 .home .markets__shot img {
   display: block;
   width: 100%;
