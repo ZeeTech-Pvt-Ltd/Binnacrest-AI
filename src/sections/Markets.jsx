@@ -28,7 +28,7 @@ export default function Markets() {
 
         <Reveal className="markets__visual" delay={120}>
           <div className="markets__shot">
-            <img src="/images/new%20img.webp" alt="Binnacrest AI platform" loading="lazy" />
+            <img src="/images/four-markets-tall-logo.webp" alt="Binnacrest AI platform" loading="lazy" />
           </div>
         </Reveal>
       </div>
