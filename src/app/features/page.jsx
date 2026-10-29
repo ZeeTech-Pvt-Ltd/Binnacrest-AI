@@ -1,15 +1,13 @@
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import { FEATURES, FEATURES_PAGE } from '../data/content.js';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import { FEATURES, FEATURES_PAGE } from '../../data/content.js';
+
+export const metadata = {
+  title: FEATURES_PAGE.seoTitle,
+  description: FEATURES_PAGE.seoDescription,
+};
 
 export default function Features() {
-  useMeta({
-    title: FEATURES_PAGE.seoTitle,
-    description: FEATURES_PAGE.seoDescription,
-    path: '/features',
-  });
-
   return (
     <>
       <div className="page-hero">

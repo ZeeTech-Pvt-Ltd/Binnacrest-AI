@@ -1,16 +1,14 @@
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import RegistrationForm from '../components/RegistrationForm.jsx';
-import { CONTACTS, SITE } from '../data/content.js';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import RegistrationForm from '../../components/RegistrationForm.jsx';
+import { CONTACTS, SITE } from '../../data/content.js';
+
+export const metadata = {
+  title: CONTACTS.seoTitle,
+  description: CONTACTS.seoDescription,
+};
 
 export default function Contacts() {
-  useMeta({
-    title: CONTACTS.seoTitle,
-    description: CONTACTS.seoDescription,
-    path: '/contact-us',
-  });
-
   return (
     <>
       <div className="page-hero">

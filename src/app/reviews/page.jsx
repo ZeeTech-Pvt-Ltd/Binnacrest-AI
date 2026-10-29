@@ -1,8 +1,12 @@
-import { Link } from 'react-router';
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import { REVIEWS_PAGE, TESTIMONIALS } from '../data/content.js';
+import Link from 'next/link';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import { REVIEWS_PAGE, TESTIMONIALS } from '../../data/content.js';
+
+export const metadata = {
+  title: REVIEWS_PAGE.seoTitle,
+  description: REVIEWS_PAGE.seoDescription,
+};
 
 const Stars = ({ count }) => (
   <span className="testimonial-card__stars" role="img" aria-label={`${count} out of 5 stars`}>
@@ -13,12 +17,6 @@ const Stars = ({ count }) => (
 );
 
 export default function Reviews() {
-  useMeta({
-    title: REVIEWS_PAGE.seoTitle,
-    description: REVIEWS_PAGE.seoDescription,
-    path: '/reviews',
-  });
-
   return (
     <>
       <div className="page-hero">
@@ -61,7 +59,7 @@ export default function Reviews() {
             <p className="final-cta__lead">
               Sign up free, start from AU$250, and see what the AI flags for you.
             </p>
-            <Link className="btn btn--gold" to="/sign-up">
+            <Link className="btn btn--gold" href="/sign-up">
               Create Your Account
             </Link>
           </Reveal>

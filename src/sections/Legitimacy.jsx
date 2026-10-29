@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import Link from 'next/link';
 import Reveal from '../components/Reveal.jsx';
 import Icon from '../components/Icon.jsx';
 import { LEGITIMACY } from '../data/content.js';
@@ -13,7 +13,7 @@ export default function Legitimacy() {
               <h2>{LEGITIMACY.title}</h2>
               <p>{LEGITIMACY.lead}</p>
               <p className="legitimacy__closing">{LEGITIMACY.closing}</p>
-              <Link className="btn btn--gold" to="/sign-up">
+              <Link className="btn btn--gold" href="/sign-up">
                 {LEGITIMACY.ctaLabel}
               </Link>
             </Reveal>

@@ -22,3 +22,6 @@ Thumbs.db
 # Env
 .env
 .env.local
+
+# Next.js build output
+.next/

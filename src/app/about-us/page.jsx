@@ -1,17 +1,15 @@
-import { Link } from 'react-router';
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import SectionHead from '../components/SectionHead.jsx';
-import { ABOUT, STATS } from '../data/content.js';
+import Link from 'next/link';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import SectionHead from '../../components/SectionHead.jsx';
+import { ABOUT, STATS } from '../../data/content.js';
+
+export const metadata = {
+  title: ABOUT.seoTitle,
+  description: ABOUT.seoDescription,
+};
 
 export default function AboutUs() {
-  useMeta({
-    title: ABOUT.seoTitle,
-    description: ABOUT.seoDescription,
-    path: '/about-us',
-  });
-
   return (
     <>
       <div className="page-hero">
@@ -84,7 +82,7 @@ export default function AboutUs() {
           <Reveal>
             <h2 className="final-cta__title">{ABOUT.ctaTitle}</h2>
             <p className="final-cta__lead">{ABOUT.ctaLead}</p>
-            <Link className="btn btn--gold" to="/sign-up">
+            <Link className="btn btn--gold" href="/sign-up">
               Create Your Account
             </Link>
           </Reveal>

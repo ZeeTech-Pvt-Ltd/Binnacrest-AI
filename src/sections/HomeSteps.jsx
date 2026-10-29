@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import Link from 'next/link';
 import Reveal from '../components/Reveal.jsx';
 import Icon from '../components/Icon.jsx';
 import SectionHead from '../components/SectionHead.jsx';
@@ -24,7 +24,7 @@ export default function HomeSteps() {
         </div>
 
         <Reveal className="steps__cta" delay={140}>
-          <Link className="btn btn--gold" to="/sign-up">
+          <Link className="btn btn--gold" href="/sign-up">
             {HOME_STEPS.ctaLabel}
           </Link>
         </Reveal>

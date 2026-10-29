@@ -1,18 +1,16 @@
-import { Link } from 'react-router';
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import Rich from '../components/Rich.jsx';
-import SectionHead from '../components/SectionHead.jsx';
-import { HOW_IT_WORKS } from '../data/content.js';
+import Link from 'next/link';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import Rich from '../../components/Rich.jsx';
+import SectionHead from '../../components/SectionHead.jsx';
+import { HOW_IT_WORKS } from '../../data/content.js';
+
+export const metadata = {
+  title: HOW_IT_WORKS.seoTitle,
+  description: HOW_IT_WORKS.seoDescription,
+};
 
 export default function HowItWorks() {
-  useMeta({
-    title: HOW_IT_WORKS.seoTitle,
-    description: HOW_IT_WORKS.seoDescription,
-    path: '/how-it-works',
-  });
-
   return (
     <>
       <div className="page-hero">
@@ -65,7 +63,7 @@ export default function HowItWorks() {
           <Reveal>
             <h2 className="final-cta__title">{HOW_IT_WORKS.ctaTitle}</h2>
             <p className="final-cta__lead">{HOW_IT_WORKS.ctaLead}</p>
-            <Link className="btn btn--gold" to="/sign-up">
+            <Link className="btn btn--gold" href="/sign-up">
               Create Your Account
             </Link>
           </Reveal>

@@ -1,16 +1,14 @@
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import RegistrationForm from '../components/RegistrationForm.jsx';
-import { SIGNUP } from '../data/content.js';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import RegistrationForm from '../../components/RegistrationForm.jsx';
+import { SIGNUP } from '../../data/content.js';
+
+export const metadata = {
+  title: SIGNUP.seoTitle,
+  description: SIGNUP.seoDescription,
+};
 
 export default function SignUp() {
-  useMeta({
-    title: SIGNUP.seoTitle,
-    description: SIGNUP.seoDescription,
-    path: '/sign-up',
-  });
-
   return (
     <>
       <div className="page-hero">

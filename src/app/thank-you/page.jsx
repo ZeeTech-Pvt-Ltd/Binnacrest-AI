@@ -1,17 +1,15 @@
-import { Link } from 'react-router';
-import useMeta from '../hooks/useMeta.js';
-import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
-import { THANKYOU } from '../data/content.js';
+import Link from 'next/link';
+import Reveal from '../../components/Reveal.jsx';
+import Icon from '../../components/Icon.jsx';
+import { THANKYOU } from '../../data/content.js';
+
+export const metadata = {
+  title: THANKYOU.seoTitle,
+  description: THANKYOU.seoDescription,
+  robots: 'noindex, follow',
+};
 
 export default function ThankYou() {
-  useMeta({
-    title: THANKYOU.seoTitle,
-    description: THANKYOU.seoDescription,
-    path: '/thank-you',
-    robots: 'noindex, follow',
-  });
-
   return (
     <section className="section thankyou">
       <div className="container">
@@ -33,7 +31,7 @@ export default function ThankYou() {
             ))}
           </ol>
 
-          <Link className="btn btn--ghost" to="/">
+          <Link className="btn btn--ghost" href="/">
             Back to home
           </Link>
         </Reveal>

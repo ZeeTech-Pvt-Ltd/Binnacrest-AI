@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import Link from 'next/link';
 import Reveal from '../components/Reveal.jsx';
 import FaqList from '../components/FaqList.jsx';
 import FaqSchema from '../components/FaqSchema.jsx';
@@ -17,7 +17,7 @@ export default function FaqSection() {
         <Reveal delay={100}>
           <p className="section-lead" style={{ textAlign: 'center', margin: '36px auto 0' }}>
             More questions?{' '}
-            <Link to="/faq" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>
+            <Link href="/faq" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>
               See the full FAQs page
             </Link>
           </p>
